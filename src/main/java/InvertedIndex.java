@@ -4,23 +4,6 @@ import java.util.regex.*;
 import edu.stanford.nlp.simple.*;
 import org.apache.commons.lang3.math.NumberUtils;
 
-/**
- * Stores information about where a word occurs in
- * a particular document.
- */
-class Posting {
-    public String id;
-    public List<Integer> locs;
-
-    public Posting() {
-        locs = new ArrayList<>();
-    }
-
-    public Posting(String id) {
-        this.id = id;
-        this.locs = new ArrayList<>();
-    }
-}
 
 /**
  * Creates and stores an inverted index
