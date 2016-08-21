@@ -302,7 +302,6 @@ public class InvertedIndex {
         String[] ngrams = query.toLowerCase().replace(", ", ",").split(",");
         File dir = new File(DIRECTORY);
         final String[] years = dir.list();
-        Stemmer s = new Stemmer();
 
         for (int i = 0; i < ngrams.length; i++) {
 
