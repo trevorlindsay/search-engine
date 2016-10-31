@@ -14,6 +14,7 @@ public class InvertedIndex {
     private HashMap<String, List<Posting>> index;
     private HashSet<String> books;
     private String DIRECTORY = "data";
+    public int NUM_YEARS;
 
     /**
      * Initializes an empty index
@@ -275,6 +276,11 @@ public class InvertedIndex {
         }
     }
 
+    /**
+     *
+     * @param query list of words / phrases to search for
+     * @return word/phrase -> (year -> count)
+     */
     public HashMap<String, HashMap<Integer, Integer>> search(String query) {
 
         if (query.equals("")) {
@@ -353,6 +359,7 @@ public class InvertedIndex {
                 int new_count = counts.get(year) + intersection.size();
                 counts.put(year, new_count);
             }
+            NUM_YEARS = counts.keySet().size();
             results.put(ngram, counts);
         }
         return results;
